@@ -1,0 +1,117 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll.tslint": "explicit"
+    },
+    "editor.accessibilitySupport": "off",
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "typescript.autoClosingTags": true,
+    },
+    "[toml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[yaml]": {
+        "editor.autoIndent": "advanced"
+    },
+    "typescript.format.semicolons": "insert",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": false,
+    "terminal.integrated.scrollback": 1000000,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, MesloLGM Nerd Font",
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    "evenBetterToml.formatter.columnWidth": 100,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.formatter.trailingNewline": true,
+    "evenBetterToml.formatter.inlineTableExpand": true,
+    "evenBetterToml.formatter.alignEntries": true,
+    "evenBetterToml.formatter.compactInlineTables": false,
+    "workbench.colorTheme": "monokai-charcoal (orange)",
+    "workbench.colorCustomizations": {
+        "list.inactiveSelectionBackground": "#FD971F75"
+    },
+    "editor.tokenColorCustomizations": {
+        "[monokai-charcoal (orange)]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "variable.other",
+                        "variable.parameter",
+                        "support.type"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#9CDCFE",
+                    }
+                },
+                {
+                    "scope": [
+                        "keyword"
+                    ],
+                    "settings": {
+                        "foreground": "#569CD6",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": [
+                        "keyword.control"
+                    ],
+                    "settings": {
+                        "foreground": "#F92672",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": [
+                        "keyword.operator",
+                        "punctuation"
+                    ],
+                    "settings": {
+                        "foreground": "#D4D4D4",
+                    }
+                },
+                {
+                    "scope": [
+                        "string",
+                        "punctuation.definition.string",
+                        "string.quoted.double.json"
+                    ],
+                    "settings": {
+                        "foreground": "#e88b39e9",
+                    }
+                },
+                {
+                    "scope": [
+                        "entity.name.type",
+                        "source",
+                        "storage.type"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#4EC9B0",
+                    }
+                },
+                {
+                    "scope": [
+                        "entity.name.function"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#E6DB74",
+                    }
+                }
+            ]
+        }
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "makefile.configureOnOpen": false
+}

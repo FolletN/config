@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+shell_integration: true
+final_space: true
+console_title_template: "{{.UserName}}@{{.HostName}} {{.PWD}}"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: os
+        style: diamond
+        leading_diamond: <transparent,background></>
+        trailing_diamond: 
+        template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+        properties:
+          linux: 
+          macos: 
+          windows: 
+        background: p:x11_gray
+        foreground: p:raisin_black
+      - type: command
+        style: diamond
+        leading_diamond: <transparent,background></>
+        trailing_diamond: 
+        template: "  "
+        properties:
+          command: "if [[ -f /.dockerenv ]]; then (docker -v | grep -Eo \"[0-9]+(\\.[0-9]+)+\");fi"
+        background: p:ryb_blue
+        foreground: white
+      - type: path
+        style: diamond
+        leading_diamond: <transparent,background></>
+        trailing_diamond: 
+        template: "   {{ .Path }} "
+        properties:
+          style: full
+        background: p:royal_blue
+      - type: git
+        style: diamond
+        background_templates:
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:deep_saffron{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:yellow_red{{ end }}"
+          - "{{ if gt .Ahead 0 }}p:pale_violet{{ end }}"
+          - "{{ if gt .Behind 0 }}p:pale_violet{{ end }}"
+        leading_diamond: <transparent,background></>
+        trailing_diamond: 
+        template: " {{ .UpstreamIcon }}{{ .HEAD }}{{if gt .Behind 0}} 󱦳{{ .Behind }}{{ end }}{{if gt .Ahead 0}} 󱦲{{ .Ahead }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+        properties:
+          branch_max_length: 25.0
+          fetch_stash_count: true
+          fetch_status: true
+          fetch_upstream_icon: true
+        background: p:avocado
+        foreground: p:space_cadet
+      - type: executiontime
+        style: diamond
+        leading_diamond: <transparent,background></>
+        trailing_diamond: 
+        template: " ⏱ {{ .FormattedMs }} "
+        properties:
+          always_enabled: true
+        background: p:dark_blue_gray
+        foreground: black
+    leading_diamond: 
+    trailing_diamond: 
+  - type: prompt
+    alignment: right
+    segments:
+      - type: command
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: " ⛭ {{ .Output }} "
+        properties:
+          command: "strap version | grep -Eo \"v[0-9]+(\\.[0-9]+)+\""
+        background: p:deep_lilac
+        foreground: white
+      - type: swift
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        background: p:red_orange
+        foreground: white
+      - type: python
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+        background: p:lapis_lazuli
+        foreground: p:shandy
+      - type: go
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        background: white
+        foreground: p:battery_charged_blue
+      - type: kubectl
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: " ⎈ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+        background: p:electic_pink
+      - type: node
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: "  {{ .Full }} "
+        properties:
+          fetch_package_manager: false
+        background: p:dark_charcoal
+        foreground: p:may_green
+      - type: npm
+        style: diamond
+        invert_powerline: true
+        leading_diamond: 
+        trailing_diamond: <transparent,background> </>
+        template: "  {{ .Full }} "
+        background: p:dark_charcoal
+        foreground: p:persian_red
+    leading_diamond: 
+    trailing_diamond: 
+  - type: prompt
+    alignment: left
+    segments:
+      - type: status
+        name: Status
+        style: plain
+        template: " {{ if gt .Code 0 }}<p:pigment_red>✗</>{{ else }}<p:pigment_green>✓</>{{ end }}"
+        properties:
+          always_enabled: true
+        background: transparent
+    newline: true
+palette:
+  platinum: "#E1E8E9"
+  x11_gray: "#B2BEC3"
+  dark_charcoal: "#303030"
+  raisin_black: "#222222"
+  persian_red: "#CA3C34"
+  electic_pink: "#F92672"
+  pigment_red: "#EA1821"
+  red_orange: "#FF4500"
+  royal_orange: "#FF9248"
+  deep_saffron: "#FAA029"
+  yellow_red: "#F5BF45"
+  shandy: "#FFE873"
+  avocado: "#4E9A06"
+  may_green: "#3C873A"
+  pigment_green: "#00A652"
+  battery_charged_blue: "#06AAD5"
+  lapis_lazuli: "#26619C"
+  space_cadet: "#193549"
+  royal_blue: "#316CE4"
+  ryb_blue: "#0B59E7"
+  dark_blue_gray: "#6f608b"
+  pale_violet: "#B388FF"
+  deep_lilac: "#945BB3"
