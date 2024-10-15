@@ -34,9 +34,29 @@
     "evenBetterToml.formatter.inlineTableExpand": true,
     "evenBetterToml.formatter.alignEntries": true,
     "evenBetterToml.formatter.compactInlineTables": false,
+    "go.toolsManagement.autoUpdate": true,
+    "makefile.configureOnOpen": false,
     "workbench.colorTheme": "monokai-charcoal (orange)",
     "workbench.colorCustomizations": {
-        "list.inactiveSelectionBackground": "#FD971F75"
+        "[monokai-charcoal (orange)]": {
+            "activityBar.foreground": "#FFFFFF",
+            "activityBar.inactiveForeground": "#FFFFFF",
+            "breadcrumb.foreground": "#e8c69f",
+            "editorGroupHeader.border": "#FD971F75",
+            "editorGroupHeader.tabsBorder": "#FD971F75",
+            "editorLineNumber.activeForeground": "#FD971F",
+            "editorLineNumber.foreground": "#FFFFFF",
+            "list.inactiveSelectionBackground": "#FD971F75",
+            "tab.activeBorder": "#000000",
+            "tab.border": "#FD971F75",
+            "tab.selectedBorderTop": "#FFFFFF",
+            "tab.hoverBackground": "#FD971F75",
+            "tab.hoverBorder": "#FD971F50",
+            "tab.unfocusedHoverBackground": "#FD971F75",
+            "tab.unfocusedHoverBorder": "#FD971F50",
+            "tab.unfocusedActiveBorderTop": "#FFFFFF",
+            "tab.unfocusedActiveBorder": "#000000",
+        }
     },
     "editor.tokenColorCustomizations": {
         "[monokai-charcoal (orange)]": {
@@ -45,7 +65,7 @@
                     "scope": [
                         "variable.other",
                         "variable.parameter",
-                        "support.type"
+                        "support.type",
                     ],
                     "settings": {
                         "fontStyle": "",
@@ -66,7 +86,7 @@
                         "keyword.control"
                     ],
                     "settings": {
-                        "foreground": "#F92672",
+                        "foreground": "#C586C0",
                         "fontStyle": "bold"
                     }
                 },
@@ -112,6 +132,4 @@
             ]
         }
     },
-    "go.toolsManagement.autoUpdate": true,
-    "makefile.configureOnOpen": false
 }
